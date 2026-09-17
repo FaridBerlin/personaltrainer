@@ -1,0 +1,58 @@
+import { Testimonial } from '../types';
+
+export const testimonials: Testimonial[] = [
+  {
+    id: 'r1',
+    name: 'James T.',
+    location: 'London, UK',
+    rating: 5,
+    text: 'The online coaching has completely changed how I approach fitness. I finally have a plan that makes sense and someone keeping me accountable. Best investment I\'ve made in myself.',
+    goal: 'Strength Training',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80',
+  },
+  {
+    id: 'r2',
+    name: 'Rachel M.',
+    location: 'Sydney, Australia',
+    rating: 5,
+    text: 'I was skeptical about online coaching but Alex made it personal and practical. The weekly check-ins keep me on track and the programming is excellent.',
+    goal: 'Fat Loss',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80',
+  },
+  {
+    id: 'r3',
+    name: 'Michael K.',
+    location: 'Toronto, Canada',
+    rating: 5,
+    text: 'As a busy professional, I needed something efficient. The 3-day training split fits my schedule perfectly and I\'m stronger than I\'ve ever been at 42.',
+    goal: 'Busy Professional',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80',
+  },
+  {
+    id: 'r4',
+    name: 'Lisa P.',
+    location: 'Austin, USA',
+    rating: 5,
+    text: 'The nutrition guidance was a game-changer. No restrictive diets, just a sustainable approach that actually works with my lifestyle. Down 2 dress sizes.',
+    goal: 'Sustainable Fat Loss',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80',
+  },
+  {
+    id: 'r5',
+    name: 'Tom B.',
+    location: 'Berlin, Germany',
+    rating: 4,
+    text: 'Solid programming and great communication. I appreciate that Alex is realistic — no hype, just results from consistent work over time.',
+    goal: 'Athletic Performance',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80',
+  },
+  {
+    id: 'r6',
+    name: 'Anna S.',
+    location: 'Dublin, Ireland',
+    rating: 5,
+    text: 'Started as a complete beginner and now I\'m confidently training on my own. The education component is what sets this apart from other programs.',
+    goal: 'Beginner to Confident',
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80',
+  },
+];
