@@ -3,7 +3,7 @@ import { NavItem, Stat, ServiceCard, TimelineItem, MethodStep, Publication } fro
 export const navItems: NavItem[] = [
   { label: 'Home', href: '#home' },
   { label: 'Coaching', href: '#coaching' },
-  { label: 'Programs', href: '#programs' },
+  { label: 'Method', href: '#method' },
   { label: 'About', href: '#about' },
   { label: 'Results', href: '#results' },
   { label: 'Videos', href: '#videos' },

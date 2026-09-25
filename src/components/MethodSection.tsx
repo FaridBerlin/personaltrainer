@@ -6,7 +6,7 @@ export const MethodSection: React.FC = () => {
   const { ref, isInView } = useInView(0.15);
 
   return (
-    <section id="programs" ref={ref} className="relative py-24 md:py-36 bg-gray-950 overflow-hidden">
+    <section id="method" ref={ref} className="relative py-24 md:py-36 bg-gray-950 overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-lime-400/[0.02] to-transparent pointer-events-none" />
       <div className="absolute bottom-12 left-0 md:left-12 text-[15vw] font-black text-white/[0.015] leading-none pointer-events-none select-none" aria-hidden="true">
