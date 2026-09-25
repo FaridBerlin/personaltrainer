@@ -46,7 +46,8 @@ export const Services: React.FC = () => {
                 service.featured
                   ? 'bg-gradient-to-b from-lime-400/[0.04] to-transparent md:-my-4 md:py-14 z-10 glow-lime border-lime-400/20'
                   : 'bg-gray-900/50 hover:bg-gray-800/30'
-              } ${isInView ? `animate-fade-in-up delay-${(index + 1) * 200}` : 'opacity-0'}`}
+              } ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}
+              style={isInView ? { animationDelay: `${(index + 1) * 200}ms` } : undefined}
             >
               {/* Badge */}
               {service.badge && (

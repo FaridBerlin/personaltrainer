@@ -91,7 +91,8 @@ export const FeaturedVideos: React.FC = () => {
             {otherVideos.slice(0, 2).map((video, i) => (
               <div
                 key={video.id}
-                className={`group relative cursor-pointer flex-1 ${isInView ? `animate-fade-in-up delay-${(i + 2) * 200}` : 'opacity-0'}`}
+                className={`group relative cursor-pointer flex-1 ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}
+                style={isInView ? { animationDelay: `${(i + 2) * 200}ms` } : undefined}
                 onClick={() => setModalVideo({ title: video.title, thumbnail: video.thumbnail })}
                 role="button"
                 tabIndex={0}
@@ -130,7 +131,8 @@ export const FeaturedVideos: React.FC = () => {
           {otherVideos.slice(2).map((video, i) => (
             <div
               key={video.id}
-              className={`col-span-12 sm:col-span-6 md:col-span-4 group relative cursor-pointer ${isInView ? `animate-fade-in-up delay-${(i + 4) * 150}` : 'opacity-0'}`}
+              className={`col-span-12 sm:col-span-6 md:col-span-4 group relative cursor-pointer ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}
+              style={isInView ? { animationDelay: `${(i + 4) * 150}ms` } : undefined}
               onClick={() => setModalVideo({ title: video.title, thumbnail: video.thumbnail })}
               role="button"
               tabIndex={0}

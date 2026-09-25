@@ -28,6 +28,7 @@ export const Hero: React.FC = () => {
           src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80"
           alt="Athletic training environment with dramatic lighting"
           className="w-full h-full object-cover"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/85 to-gray-950/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent" />
