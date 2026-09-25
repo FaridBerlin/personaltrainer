@@ -52,7 +52,7 @@ export const FinalCTA: React.FC = () => {
               Apply for Coaching
               <ArrowRight size={18} className="ml-2" />
             </Button>
-            <Button variant="secondary" size="lg" onClick={() => scrollToSection('#programs')}>
+            <Button variant="secondary" size="lg" onClick={() => scrollToSection('#coaching')}>
               Explore Programs
             </Button>
           </div>

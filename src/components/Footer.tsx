@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
                 <h4 className="text-[10px] uppercase tracking-[0.3em] text-gray-600 font-semibold mb-4">Programs</h4>
                 <ul className="space-y-2">
                   <li><button onClick={() => scrollToSection('#coaching')} className="text-gray-400 hover:text-white text-sm transition-colors">Online Coaching</button></li>
-                  <li><button onClick={() => scrollToSection('#programs')} className="text-gray-400 hover:text-white text-sm transition-colors">Self-Guided</button></li>
+                  <li><button onClick={() => scrollToSection('#coaching')} className="text-gray-400 hover:text-white text-sm transition-colors">Self-Guided</button></li>
                   <li><button onClick={() => scrollToSection('#coaching')} className="text-gray-400 hover:text-white text-sm transition-colors">1-to-1 Premium</button></li>
                   <li><button onClick={() => scrollToSection('#videos')} className="text-gray-400 hover:text-white text-sm transition-colors">Free Videos</button></li>
                 </ul>
