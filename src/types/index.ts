@@ -47,6 +47,7 @@ export interface Video {
   views: string;
   thumbnail: string;
   duration: string;
+  youtubeUrl: string;
   featured?: boolean;
 }
 

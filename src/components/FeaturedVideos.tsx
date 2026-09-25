@@ -3,6 +3,7 @@ import { Play, Eye, Clock } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 import { VideoModal } from './VideoModal';
 import { videos } from '../data/videos';
+import { Video } from '../types';
 
 const handleVideoKey = (e: React.KeyboardEvent, callback: () => void) => {
   if (e.key === 'Enter' || e.key === ' ') {
@@ -13,7 +14,7 @@ const handleVideoKey = (e: React.KeyboardEvent, callback: () => void) => {
 
 export const FeaturedVideos: React.FC = () => {
   const { ref, isInView } = useInView(0.1);
-  const [modalVideo, setModalVideo] = useState<{ title: string; thumbnail: string } | null>(null);
+  const [modalVideo, setModalVideo] = useState<Video | null>(null);
 
   const featuredVideo = videos.find(v => v.featured);
   const otherVideos = videos.filter(v => !v.featured);
@@ -51,11 +52,11 @@ export const FeaturedVideos: React.FC = () => {
           {featuredVideo && (
             <div
               className={`col-span-12 md:col-span-8 relative group cursor-pointer ${isInView ? 'animate-fade-in-up delay-100' : 'opacity-0'}`}
-              onClick={() => setModalVideo({ title: featuredVideo.title, thumbnail: featuredVideo.thumbnail })}
+              onClick={() => setModalVideo(featuredVideo)}
               role="button"
               tabIndex={0}
               aria-label={`Play video: ${featuredVideo.title}`}
-              onKeyDown={(e) => handleVideoKey(e, () => setModalVideo({ title: featuredVideo.title, thumbnail: featuredVideo.thumbnail }))}
+              onKeyDown={(e) => handleVideoKey(e, () => setModalVideo(featuredVideo))}
             >
               <div className="relative aspect-video rounded-sm overflow-hidden border border-white/5 group-hover:border-lime-400/20 transition-all duration-500">
                 <img
@@ -93,11 +94,11 @@ export const FeaturedVideos: React.FC = () => {
                 key={video.id}
                 className={`group relative cursor-pointer flex-1 ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}
                 style={isInView ? { animationDelay: `${(i + 2) * 200}ms` } : undefined}
-                onClick={() => setModalVideo({ title: video.title, thumbnail: video.thumbnail })}
+                onClick={() => setModalVideo(video)}
                 role="button"
                 tabIndex={0}
                 aria-label={`Play video: ${video.title}`}
-                onKeyDown={(e) => handleVideoKey(e, () => setModalVideo({ title: video.title, thumbnail: video.thumbnail }))}
+                onKeyDown={(e) => handleVideoKey(e, () => setModalVideo(video))}
               >
                 <div className="relative aspect-video rounded-sm overflow-hidden border border-white/5 group-hover:border-lime-400/20 transition-all duration-500 h-full">
                   <img
@@ -133,11 +134,11 @@ export const FeaturedVideos: React.FC = () => {
               key={video.id}
               className={`col-span-12 sm:col-span-6 md:col-span-4 group relative cursor-pointer ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}
               style={isInView ? { animationDelay: `${(i + 4) * 150}ms` } : undefined}
-              onClick={() => setModalVideo({ title: video.title, thumbnail: video.thumbnail })}
+              onClick={() => setModalVideo(video)}
               role="button"
               tabIndex={0}
               aria-label={`Play video: ${video.title}`}
-              onKeyDown={(e) => handleVideoKey(e, () => setModalVideo({ title: video.title, thumbnail: video.thumbnail }))}
+              onKeyDown={(e) => handleVideoKey(e, () => setModalVideo(video))}
             >
               <div className="relative aspect-video rounded-sm overflow-hidden border border-white/5 group-hover:border-lime-400/20 transition-all duration-500">
                 <img
@@ -175,6 +176,7 @@ export const FeaturedVideos: React.FC = () => {
           onClose={() => setModalVideo(null)}
           title={modalVideo.title}
           thumbnail={modalVideo.thumbnail}
+          youtubeUrl={modalVideo.youtubeUrl}
         />
       )}
     </section>
