@@ -1,24 +1,17 @@
 import React from 'react';
-import { Youtube, Instagram, Facebook, Mail, MapPin } from 'lucide-react';
+import { Youtube, Github, Mail, MapPin } from 'lucide-react';
 import { navItems } from '../data/siteData';
 import { scrollToSection } from '../utils/scroll';
 
-const TikTokIcon: React.FC = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.88 2.89 2.89 0 01-2.88-2.88 2.89 2.89 0 012.88-2.88c.3 0 .59.04.86.12V9.37a6.33 6.33 0 00-.86-.06A6.34 6.34 0 003.15 15.65 6.34 6.34 0 009.49 22a6.34 6.34 0 006.34-6.34V9.05a8.16 8.16 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.48z" />
-  </svg>
-);
-
 interface SocialLink {
   label: string;
+  href: string;
   icon: React.ReactNode;
 }
 
 const socialLinks: SocialLink[] = [
-  { label: 'YouTube', icon: <Youtube size={16} /> },
-  { label: 'Instagram', icon: <Instagram size={16} /> },
-  { label: 'TikTok', icon: <TikTokIcon /> },
-  { label: 'Facebook', icon: <Facebook size={16} /> },
+  { label: 'YouTube', href: 'https://www.youtube.com/@FaridBerlin', icon: <Youtube size={16} /> },
+  { label: 'GitHub', href: 'https://github.com/FaridBerlin', icon: <Github size={16} /> },
 ];
 
 export const Footer: React.FC = () => {
@@ -95,7 +88,9 @@ export const Footer: React.FC = () => {
             {socialLinks.map((social) => (
               <a
                 key={social.label}
-                href="#"
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={`Follow us on ${social.label}`}
                 className="w-8 h-8 rounded-sm bg-white/5 border border-white/5 flex items-center justify-center text-gray-500 hover:text-lime-400 hover:border-lime-400/30 transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-lime-400"
               >
@@ -104,15 +99,9 @@ export const Footer: React.FC = () => {
             ))}
           </div>
 
-          {/* Copyright & Legal */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 text-[10px] text-gray-600 uppercase tracking-wider">
+          {/* Copyright */}
+          <div className="flex items-center gap-4 text-[10px] text-gray-600 uppercase tracking-wider">
             <span>© {new Date().getFullYear()} Carter Performance</span>
-            <span className="hidden sm:inline text-gray-800" aria-hidden="true">|</span>
-            <div className="flex gap-4">
-              <a href="#" className="hover:text-gray-400 transition-colors">Privacy</a>
-              <a href="#" className="hover:text-gray-400 transition-colors">Terms</a>
-              <a href="#" className="hover:text-gray-400 transition-colors">Disclaimer</a>
-            </div>
           </div>
         </div>
 
