@@ -27,7 +27,7 @@ export const AboutCoach: React.FC = () => {
             <div className="flex-1 h-px bg-white/5" />
           </div>
           <h2 className="display-lg text-white">
-            Meet <span className="text-gradient">Alex Carter.</span>
+            Meet <span className="text-gradient">Farid Berlin.</span>
           </h2>
         </div>
 
@@ -39,8 +39,8 @@ export const AboutCoach: React.FC = () => {
               {/* Main portrait - asymmetric crop */}
               <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
                 <img
-                  src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=800&q=80"
-                  alt="Alex Carter - Personal Trainer and Fitness Coach"
+                  src="/coach-portrait.jpg"
+                  alt="Farid Berlin - Personal Trainer and Fitness Coach"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -58,7 +58,7 @@ export const AboutCoach: React.FC = () => {
 
               {/* Name plate */}
               <div className="absolute bottom-6 left-6">
-                <p className="text-white font-bold text-lg">Alex Carter</p>
+                <p className="text-white font-bold text-lg">Farid Berlin</p>
                 <p className="text-lime-400 text-xs uppercase tracking-[0.2em]">Head Coach & Founder</p>
               </div>
             </div>

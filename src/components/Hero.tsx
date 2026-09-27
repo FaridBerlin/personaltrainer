@@ -25,8 +25,8 @@ export const Hero: React.FC = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80"
-          alt="Athletic training environment with dramatic lighting"
+          src="/coach-hero.jpg"
+          alt="Farid Berlin on the beach"
           className="w-full h-full object-cover"
           decoding="async"
         />

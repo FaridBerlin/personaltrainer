@@ -25,8 +25,8 @@ export const ProblemSection: React.FC = () => {
               {/* Main image - offset */}
               <div className="relative aspect-[3/4] rounded-sm overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&q=80"
-                  alt="Structured training session showing focused athlete"
+                  src="/coach-training.jpg"
+                  alt="Farid Berlin training on gymnastic rings"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -38,7 +38,7 @@ export const ProblemSection: React.FC = () => {
                 <p className="text-white font-semibold text-sm leading-snug">"Stop training randomly. Start training with purpose."</p>
                 <div className="mt-3 flex items-center gap-2">
                   <div className="w-6 h-px bg-lime-400" />
-                  <span className="text-lime-400 text-xs font-medium">Alex Carter</span>
+                  <span className="text-lime-400 text-xs font-medium">Farid Berlin</span>
                 </div>
               </div>
 
