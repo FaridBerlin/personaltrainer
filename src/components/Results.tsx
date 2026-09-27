@@ -79,8 +79,9 @@ export const Results: React.FC = () => {
               <div
                 key={t.id}
                 className={`group relative bg-gray-900/50 rounded-sm overflow-hidden border border-white/5 hover:border-lime-400/20 transition-all duration-500 card-hover flex-1 ${
-                  isInView ? `animate-fade-in-up delay-${(i + 2) * 200}` : 'opacity-0'
+                  isInView ? 'animate-fade-in-up' : 'opacity-0'
                 }`}
+                style={isInView ? { animationDelay: `${(i + 2) * 200}ms` } : undefined}
               >
                 <div className="grid grid-cols-2 gap-0 h-full">
                   <div className="relative aspect-square overflow-hidden">

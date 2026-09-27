@@ -1,21 +1,45 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle, Download, ArrowRight } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { Send, CheckCircle, Download, ArrowRight, Loader2 } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 
 export const LeadMagnet: React.FC = () => {
   const { ref, isInView } = useInView(0.15);
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
 
   const validateEmail = (email: string): boolean => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
     if (!email.trim()) { setError('Please enter your email address.'); return; }
     if (!validateEmail(email)) { setError('Please enter a valid email address.'); return; }
-    setSubmitted(true);
+
+    const { VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY } = import.meta.env;
+    if (!VITE_EMAILJS_SERVICE_ID || !VITE_EMAILJS_TEMPLATE_ID || !VITE_EMAILJS_PUBLIC_KEY) {
+      console.error('EmailJS is not configured — set VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, and VITE_EMAILJS_PUBLIC_KEY.');
+      setError('Sign-up is temporarily unavailable. Please try again later.');
+      return;
+    }
+
+    setSending(true);
+    try {
+      await emailjs.send(
+        VITE_EMAILJS_SERVICE_ID,
+        VITE_EMAILJS_TEMPLATE_ID,
+        { user_email: email },
+        { publicKey: VITE_EMAILJS_PUBLIC_KEY }
+      );
+      setSubmitted(true);
+    } catch (err) {
+      console.error('EmailJS send failed:', err);
+      setError('Something went wrong. Please try again.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -81,8 +105,8 @@ export const LeadMagnet: React.FC = () => {
                       <Download size={18} className="text-lime-400" />
                     </div>
                     <div>
-                      <p className="text-white font-semibold text-sm">Instant Download</p>
-                      <p className="text-gray-500 text-xs">Delivered to your inbox</p>
+                      <p className="text-white font-semibold text-sm">Free Download</p>
+                      <p className="text-gray-500 text-xs">We'll email it to you</p>
                     </div>
                   </div>
 
@@ -107,10 +131,20 @@ export const LeadMagnet: React.FC = () => {
                       )}
                       <button
                         type="submit"
-                        className="w-full px-6 py-3.5 bg-lime-400 text-gray-900 font-bold rounded-sm hover:bg-lime-300 transition-colors focus:outline-none focus:ring-2 focus:ring-lime-400 focus:ring-offset-2 focus:ring-offset-gray-900 flex items-center justify-center gap-2 text-sm uppercase tracking-wider"
+                        disabled={sending}
+                        className="w-full px-6 py-3.5 bg-lime-400 text-gray-900 font-bold rounded-sm hover:bg-lime-300 transition-colors focus:outline-none focus:ring-2 focus:ring-lime-400 focus:ring-offset-2 focus:ring-offset-gray-900 flex items-center justify-center gap-2 text-sm uppercase tracking-wider disabled:opacity-60 disabled:cursor-not-allowed"
                       >
-                        <Send size={14} />
-                        Send Me the Guide
+                        {sending ? (
+                          <>
+                            <Loader2 size={14} className="animate-spin" />
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            <Send size={14} />
+                            Send Me the Guide
+                          </>
+                        )}
                       </button>
                     </div>
                   </form>
@@ -125,7 +159,7 @@ export const LeadMagnet: React.FC = () => {
                     <CheckCircle size={28} className="text-lime-400" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">You're in!</h3>
-                  <p className="text-gray-400 text-sm">Check your inbox for the guide.</p>
+                  <p className="text-gray-400 text-sm">Thanks for signing up — we'll send your guide over shortly.</p>
                   <button
                     onClick={() => { setSubmitted(false); setEmail(''); }}
                     className="mt-4 inline-flex items-center gap-1 text-xs text-lime-400 hover:text-lime-300 transition-colors"

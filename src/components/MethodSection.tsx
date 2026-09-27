@@ -45,7 +45,8 @@ export const MethodSection: React.FC = () => {
             {methodSteps.map((step, index) => (
               <div
                 key={step.number}
-                className={`relative ${isInView ? `animate-fade-in-up delay-${(index + 1) * 150}` : 'opacity-0'}`}
+                className={`relative ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}
+                style={isInView ? { animationDelay: `${(index + 1) * 150}ms` } : undefined}
               >
                 {/* Node on timeline */}
                 <div className="hidden lg:flex absolute top-14 left-0 right-0 justify-center">

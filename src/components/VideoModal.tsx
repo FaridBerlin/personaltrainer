@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
-import { X, Play } from 'lucide-react';
+import { X, Play, ExternalLink } from 'lucide-react';
 
 interface VideoModalProps {
   isOpen: boolean;
   onClose: () => void;
   title: string;
   thumbnail: string;
+  youtubeUrl: string;
 }
 
-export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, title, thumbnail }) => {
+export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, title, thumbnail, youtubeUrl }) => {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -41,20 +42,27 @@ export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, title, 
         >
           <X size={18} />
         </button>
-        <div className="relative aspect-video bg-gray-900">
+        <a
+          href={youtubeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative aspect-video bg-gray-900 block group/link"
+        >
           <img
             src={thumbnail}
             alt={title}
             className="w-full h-full object-cover opacity-50"
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <div className="w-20 h-20 bg-lime-400 rounded-full flex items-center justify-center shadow-lg shadow-lime-400/30 glow-lime-strong">
+            <div className="w-20 h-20 bg-lime-400 rounded-full flex items-center justify-center shadow-lg shadow-lime-400/30 glow-lime-strong group-hover/link:scale-105 transition-transform">
               <Play size={32} className="text-gray-900 ml-1" fill="currentColor" />
             </div>
             <p className="mt-6 text-white font-bold text-lg text-center px-4 max-w-md">{title}</p>
-            <p className="mt-2 text-gray-500 text-xs uppercase tracking-wider">Video preview — full content on YouTube</p>
+            <p className="mt-2 flex items-center gap-1.5 text-lime-400 text-xs uppercase tracking-wider font-medium">
+              Watch on YouTube <ExternalLink size={12} />
+            </p>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   );
