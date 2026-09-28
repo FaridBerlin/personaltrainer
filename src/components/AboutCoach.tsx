@@ -72,7 +72,7 @@ export const AboutCoach: React.FC = () => {
                 I started coaching in 2014 with a simple belief: fitness should be <span className="text-lime-400 font-medium">simple, sustainable, and backed by science.</span>
               </p>
               <p className="text-gray-400 leading-relaxed">
-                After years of watching people struggle with confusing advice and unsustainable programs, I built Carter Performance to offer something different. My approach combines strength training fundamentals with practical nutrition guidance and real accountability.
+                After years of watching people struggle with confusing advice and unsustainable programs, I built Farid Berlin Performance to offer something different. My approach combines strength training fundamentals with practical nutrition guidance and real accountability.
               </p>
             </div>
 

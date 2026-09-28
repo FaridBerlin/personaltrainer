@@ -23,7 +23,7 @@ export const MethodSection: React.FC = () => {
           <div className="grid lg:grid-cols-12 gap-8 items-end">
             <div className="lg:col-span-7">
               <h2 className="display-lg text-white">
-                The Carter<br />
+                The Farid Berlin<br />
                 <span className="text-gradient">Performance</span><br />
                 Method.
               </h2>
