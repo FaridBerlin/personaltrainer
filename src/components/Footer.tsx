@@ -1,7 +1,13 @@
 import React from 'react';
-import { Youtube, Github, Mail, MapPin } from 'lucide-react';
+import { Youtube, Instagram, Github, Mail, MapPin } from 'lucide-react';
 import { navItems } from '../data/siteData';
 import { scrollToSection } from '../utils/scroll';
+
+const TikTokIcon: React.FC = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.88 2.89 2.89 0 01-2.88-2.88 2.89 2.89 0 012.88-2.88c.3 0 .59.04.86.12V9.37a6.33 6.33 0 00-.86-.06A6.34 6.34 0 003.15 15.65 6.34 6.34 0 009.49 22a6.34 6.34 0 006.34-6.34V9.05a8.16 8.16 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.48z" />
+  </svg>
+);
 
 interface SocialLink {
   label: string;
@@ -11,6 +17,8 @@ interface SocialLink {
 
 const socialLinks: SocialLink[] = [
   { label: 'YouTube', href: 'https://www.youtube.com/@FaridBerlin', icon: <Youtube size={16} /> },
+  { label: 'Instagram', href: 'https://www.instagram.com/faridberlin/', icon: <Instagram size={16} /> },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@faridberlin', icon: <TikTokIcon /> },
   { label: 'GitHub', href: 'https://github.com/FaridBerlin', icon: <Github size={16} /> },
 ];
 
