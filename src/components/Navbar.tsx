@@ -46,11 +46,11 @@ export const Navbar: React.FC = () => {
             onClick={() => handleNavClick('#home')}
           >
             <div className="w-8 h-8 bg-lime-400 rounded-sm flex items-center justify-center group-hover:shadow-lg group-hover:shadow-lime-400/20 transition-shadow">
-              <span className="text-gray-900 font-black text-xs tracking-tight">CP</span>
+              <span className="text-gray-900 font-black text-xs tracking-tight">FB</span>
             </div>
             <div className="hidden sm:block">
               <span className="text-white font-bold text-sm tracking-tight">
-                CARTER
+                FARID BERLIN
               </span>
               <span className="text-lime-400 font-bold text-sm tracking-tight ml-1">
                 PERFORMANCE

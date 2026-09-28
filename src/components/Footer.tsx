@@ -33,10 +33,10 @@ export const Footer: React.FC = () => {
             <div className="lg:col-span-7">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-8 bg-lime-400 rounded-sm flex items-center justify-center">
-                  <span className="text-gray-900 font-black text-xs">CP</span>
+                  <span className="text-gray-900 font-black text-xs">FB</span>
                 </div>
                 <span className="text-white font-bold text-sm tracking-tight">
-                  CARTER <span className="text-lime-400">PERFORMANCE</span>
+                  FARID BERLIN <span className="text-lime-400">PERFORMANCE</span>
                 </span>
               </div>
               <p className="text-2xl md:text-3xl font-light text-gray-300 leading-snug max-w-lg">
@@ -75,8 +75,8 @@ export const Footer: React.FC = () => {
                 <ul className="space-y-3">
                   <li className="flex items-center gap-2 text-gray-400 text-sm">
                     <Mail size={12} className="text-lime-400 flex-shrink-0" />
-                    <a href="mailto:hello@carterperformance.com" className="hover:text-white transition-colors text-xs">
-                      hello@carterperformance.com
+                    <a href="mailto:hello@faridberlinperformance.com" className="hover:text-white transition-colors text-xs">
+                      hello@faridberlinperformance.com
                     </a>
                   </li>
                   <li className="flex items-center gap-2 text-gray-400 text-sm">
@@ -109,7 +109,7 @@ export const Footer: React.FC = () => {
 
           {/* Copyright */}
           <div className="flex items-center gap-4 text-[10px] text-gray-600 uppercase tracking-wider">
-            <span>© {new Date().getFullYear()} Carter Performance</span>
+            <span>© {new Date().getFullYear()} Farid Berlin Performance</span>
           </div>
         </div>
 
