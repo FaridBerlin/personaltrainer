@@ -45,7 +45,7 @@ export const Hero: React.FC = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/coach-hero.jpg"
+          src={`${import.meta.env.BASE_URL}coach-hero.jpg`}
           alt="Farid Berlin on the beach"
           className="w-full h-full object-cover"
           decoding="async"

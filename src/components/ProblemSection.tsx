@@ -25,7 +25,7 @@ export const ProblemSection: React.FC = () => {
               {/* Main image - offset */}
               <div className="relative aspect-[3/4] rounded-sm overflow-hidden">
                 <img
-                  src="/coach-training.jpg"
+                  src={`${import.meta.env.BASE_URL}coach-training.jpg`}
                   alt="Farid Berlin training on gymnastic rings"
                   className="w-full h-full object-cover"
                   loading="lazy"

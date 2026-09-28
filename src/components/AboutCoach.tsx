@@ -39,7 +39,7 @@ export const AboutCoach: React.FC = () => {
               {/* Main portrait - asymmetric crop */}
               <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
                 <img
-                  src="/coach-portrait.jpg"
+                  src={`${import.meta.env.BASE_URL}coach-portrait.jpg`}
                   alt="Farid Berlin - Personal Trainer and Fitness Coach"
                   className="w-full h-full object-cover"
                   loading="lazy"
