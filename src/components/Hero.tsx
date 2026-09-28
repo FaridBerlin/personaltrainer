@@ -5,14 +5,34 @@ import { useCountUp } from '../hooks/useCountUp';
 import { useInView } from '../hooks/useInView';
 import { scrollToSection } from '../utils/scroll';
 
-const StatCounter: React.FC<{ value: number; suffix: string; label: string }> = ({ value, suffix, label }) => {
+const StatCounter: React.FC<{ value: number; suffix: string; label: string; href?: string }> = ({ value, suffix, label, href }) => {
   const { count, ref } = useCountUp(value, 2200);
-  return (
-    <div ref={ref} className="text-center sm:text-left">
+  const content = (
+    <>
       <div className="display-md text-white tabular-nums">
         {count}{suffix}
       </div>
       <div className="text-xs uppercase tracking-[0.2em] text-gray-500 mt-1 font-medium">{label}</div>
+    </>
+  );
+
+  if (href) {
+    return (
+      <a
+        ref={ref as unknown as React.RefObject<HTMLAnchorElement>}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-center sm:text-left block hover:opacity-80 transition-opacity"
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <div ref={ref} className="text-center sm:text-left">
+      {content}
     </div>
   );
 };
@@ -89,7 +109,7 @@ export const Hero: React.FC = () => {
 
             {/* Stats Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-6 lg:gap-8">
-              <StatCounter value={1200} suffix="K+" label="YouTube Subscribers" />
+              <StatCounter value={177} suffix="K+" label="YouTube Subscribers" href="https://www.youtube.com/@FaridBerlin" />
               <StatCounter value={12} suffix="K+" label="Clients Coached" />
               <StatCounter value={49} suffix="/50" label="Client Rating" />
             </div>

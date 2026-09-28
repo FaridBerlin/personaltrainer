@@ -9,7 +9,7 @@ export const transformations: Transformation[] = [
     testimonial: 'I went from barely doing push-ups to benching my bodyweight. The programming made sense and I actually looked forward to training.',
     metric: 'Increased bench press by 40kg',
     beforeImage: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&q=80',
-    afterImage: 'https://images.unsplash.com/photo-1583454158243-22a63964e7a1?w=400&q=80',
+    afterImage: 'https://images.unsplash.com/photo-1610312856669-2cee66b2949c?w=400&q=80',
   },
   {
     id: 't2',
@@ -29,7 +29,7 @@ export const transformations: Transformation[] = [
     testimonial: 'I never thought I\'d do a pull-up. Farid broke it down into manageable steps and I nailed it in 12 weeks. Game changer.',
     metric: 'Completed first strict pull-up',
     beforeImage: 'https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=400&q=80',
-    afterImage: 'https://images.unsplash.com/photo-1597452485669-2c76e5e1d69a?w=400&q=80',
+    afterImage: 'https://images.unsplash.com/photo-1626724419913-ac60f768c20f?w=400&q=80',
   },
   {
     id: 't4',

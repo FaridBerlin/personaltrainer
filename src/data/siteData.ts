@@ -10,13 +10,13 @@ export const navItems: NavItem[] = [
 ];
 
 export const heroStats: Stat[] = [
-  { value: '1.2M+', label: 'YouTube Subscribers' },
+  { value: '177K+', label: 'YouTube Subscribers' },
   { value: '12K+', label: 'Clients Coached' },
   { value: '4.9/5', label: 'Average Client Rating' },
 ];
 
 export const socialStats: Stat[] = [
-  { value: '1.2M+', label: 'YouTube Subscribers' },
+  { value: '177K+', label: 'YouTube Subscribers' },
   { value: '850K+', label: 'Instagram Followers' },
   { value: '12,000+', label: 'Transformations' },
   { value: '10+', label: 'Years Coaching' },
@@ -75,7 +75,7 @@ export const timeline: TimelineItem[] = [
   { year: '2014', event: 'Started coaching at a local gym' },
   { year: '2017', event: 'Launched first structured training program' },
   { year: '2020', event: 'Began online coaching full-time' },
-  { year: '2023', event: 'Reached 1 million YouTube subscribers' },
+  { year: '2023', event: 'Grew YouTube channel to 177K+ subscribers' },
   { year: 'Today', event: 'Coaches clients worldwide across 40+ countries' },
 ];
 
